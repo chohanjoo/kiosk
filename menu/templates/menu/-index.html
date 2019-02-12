@@ -25,6 +25,10 @@
     .tabbable-panel {
         border: 1px solid #eee;
         padding: 0px;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        background-color: #ffffff;
     }
     /* Default mode */
     
@@ -166,7 +170,7 @@
     /*Jumbotron*/
     
     .jumbotron {
-        margin-top: 15px;
+        margin-top: 60px;
         padding-top: 50px;
         background-image: url('img/jumbotron.jpg');
         background-size: cover;
@@ -180,12 +184,16 @@
         bottom: 80px;
         right: 20px;
         display: none;
-        background-color: #d9534f;
         z-index: 10;
+    }
+    /*Scroll Spy*/
+    
+    body {
+        position: relative;
     }
 </style>
 
-<body>
+<body data-spy="scroll" data-target=".nav" data-offset="50">
     <!--Scroll Top button-->
     <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="맨 위로" data-toggle="tooltip" data-placement="left">
         <i class="fas fa-angle-up"></i></a>
@@ -193,44 +201,36 @@
 
 
     <!--Navigation Menu in fixed Top side-->
-
-
-    <div id="top-navigation-bar" class="tabbable-panel">
+    <nav id="top-navigation-bar" class="tabbable-panel">
         <div class="tabbable-line">
-            <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item  active">
-                    <a class="nav-link" data-toggle="tab" href="#menu1">
-                    착한점심</a>
+            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                <li class="active">
+                    <a class="nav-link" href="#menu1">
+                        착한점심</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu2">
-                    추천메뉴</a>
+                <li> <a class="nav-link" href="#menu2">
+                        추천메뉴</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu3">
-                    햄버거</a>
+                <li> <a class="nav-link" href="#menu3">
+                        햄버거</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu4">
-                    치킨</a>
+                <li> <a class="nav-link" href="#menu4">
+                        치킨</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu5">
-                    디저트</a>
+                <li> <a class="nav-link" href="#menu5">
+                        디저트</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu6">
-                    음료</a>
+                <li>
+                    <a class="nav-link" href="#menu6">
+                        음료</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu7" role="button">
-                    패키지</a>
+                <li>
+                    <a class="nav-link" href="#menu7">
+                        패키지</a>
                 </li>
             </ul>
         </div>
-    </div>
-
-
+    </nav>
 
 
 
@@ -516,11 +516,11 @@
             </div>
         </div>
 
-        <div class="row" style="padding:30px;">
+        <div class="row" style="padding-top:30px;">
             <div class="col-lg-4 col-0"></div>
             <div class="col-lg-4 col-12">
-                <a class="btn btn-danger btn-block" role="button" style="font-size:15pt; z-index: 1;">장바구니 결제하기
-                </a>
+                <p class="text-center"><a class="btn btn-danger btn-block btn-lg" style="color:#ffffff" role="button">장바구니 결제하기
+                </a></p>
             </div>
         </div>
     </div>
@@ -583,6 +583,8 @@
         });
 
         $('#back-to-top').tooltip('show');
+
+        // Scroll Spy
 
     });
 </script>
