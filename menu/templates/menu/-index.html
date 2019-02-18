@@ -541,6 +541,9 @@
     $(document).on('ready', function() {
 
         $('.center').slick({
+            focusOnSelect: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
             dots: true,
             infinite: true,
             centerMode: true,
@@ -585,8 +588,6 @@
         });
 
         $('#back-to-top').tooltip('show');
-
-        // Scroll Spy
 
     });
 </script>
