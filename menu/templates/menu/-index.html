@@ -241,8 +241,8 @@
     <div class="container-fluid">
         <!--Jumbotron-->
         <div class="row">
-            <div class="col-md-3 col-0"></div>
-            <div class="col-md-6 col-12">
+            <div class="col-lg-3 col-0"></div>
+            <div class="col-lg-6 col-12">
                 <div class="jumbotron">
                     <h4 class="text-center" style="text-shadow: black 0em 0em 0.2em; font-weight: 600;">아주 맛있는 녀석을 소개합니다</h4>
                     <h5 class="text-center" style="text-shadow: black  0em 0em 0.2em;; font-weight: 500;">그것도 아주 신선한 치킨을 말이죠!</h5>
@@ -520,7 +520,7 @@
         <div class="row" style="padding-top:30px;">
             <div class="col-lg-4 col-0"></div>
             <div class="col-lg-4 col-12">
-                <p class="text-center"><a class="btn btn-danger btn-block btn-lg" style="color:#ffffff" role="button">장바구니 결제하기
+                <p class="text-center"><a class="btn btn-danger btn-block btn-lg" style="color:#f3cbcb" role="button">장바구니 결제하기
                 </a></p>
             </div>
         </div>
@@ -540,7 +540,9 @@
 <script type="text/javascript">
     $(document).on('ready', function() {
 
-        $('.center').slick({
+        var elements = $('.center').slick({
+            touchMove: true,
+            pauseOnHover: true,
             focusOnSelect: true,
             autoplay: true,
             autoplaySpeed: 4000,
@@ -569,6 +571,19 @@
                 }
             }]
         });
+
+
+        //슬라이드 3개 이하 버그 픽스용 코드
+        var slick_len = $(".center").length;
+        for (var i = 0; i < slick_len; i++) {
+            var count = $(".center:eq(" + i + ")").slick("getSlick").slideCount;
+            var show = $(".center:eq(" + i + ")").slick("getSlick").slickGetOption("slidesToShow");
+            if (show >= count) {
+                $(".center:eq(" + i + ")").slick("getSlick").slickSetOption("slidesToShow", 1, true);
+            }
+        }
+
+
 
         //scrollTop button
         $(window).scroll(function() {
