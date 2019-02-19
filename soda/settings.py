@@ -25,7 +25,7 @@ SECRET_KEY = 'tfk9)bmqoi1h_7o0qq66+c98nh9ysevde(8=yow=(i9ke9e+vj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'soda','static'),
 ]
+
+
+MEDIA_URL = '/static/menu/img/'
