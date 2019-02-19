@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>롯데리아 숭실대점</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+    <!--Slick-->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+
+</head>
+
+<style type="text/css">
+    /* Concept color : #d9534f and #eee */
+    /* Top side tab pannel CSS style*/
+    
+    .tabbable-panel {
+        border: 1px solid #eee;
+        padding: 0px;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        z-index: 10;
+        background-color: #ffffff;
+    }
+    /* Default mode */
+    
+    .tabbable-line>.nav-tabs {
+        border: none;
+        margin: 0px;
+    }
+    
+    .tabbable-line>.nav-tabs>li {
+        margin-right: 2px;
+    }
+    
+    .tabbable-line>.nav-tabs>li>a {
+        border: 0;
+        margin-right: 0;
+        color: #737373;
+    }
+    
+    .tabbable-line>.nav-tabs>li>a>i {
+        color: #a6a6a6;
+    }
+    
+    .tabbable-line>.nav-tabs>li.open>a,
+    .tabbable-line>.nav-tabs>li:hover>a {
+        border: 0;
+        background: none !important;
+        color: #333333;
+    }
+    
+    .tabbable-line>.nav-tabs>li.open>a>i,
+    .tabbable-line>.nav-tabs>li:hover>a>i {
+        color: #a6a6a6;
+    }
+    
+    .tabbable-line>.nav-tabs>li.open .dropdown-menu,
+    .tabbable-line>.nav-tabs>li:hover .dropdown-menu {
+        margin-top: 0px;
+    }
+    
+    .tabbable-line>.nav-tabs>li.active>a {
+        border: 0;
+        color: #333333;
+    }
+    
+    .tabbable-line>.nav-tabs>li.active>a>i {
+        color: #404040;
+    }
+    
+    .tabbable-line>.tab-content {
+        margin-top: -3px;
+        background-color: #fff;
+        border: 0;
+        border-top: 1px solid #eee;
+        padding: 15px 0;
+    }
+    
+    .portlet .tabbable-line>.tab-content {
+        padding-bottom: 0;
+    }
+    /* Below tabs mode */
+    
+    .tabbable-line.tabs-below>.nav-tabs>li {
+        border-top: 4px solid transparent;
+    }
+    
+    .tabbable-line.tabs-below>.nav-tabs>li>a {
+        margin-top: 0;
+    }
+    
+    .tabbable-line.tabs-below>.tab-content {
+        margin-top: -10px;
+        border-top: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+    }
+    /*orderpart*/
+    
+    #order-image {
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 15px;
+    }
+    /* Custom Radio Button Start*/
+    
+    .radiotextsty {
+        font-size: 10pt;
+    }
+    
+    .customradio {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0px;
+        cursor: pointer;
+        font-size: 0px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* Hide the browser's default radio button */
+    
+    .customradio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    /* Create a custom radio button */
+    
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid #BEBEBE;
+    }
+    /* On mouse-over, add a grey background color */
+    
+    .customradio:hover input~.checkmark {
+        background-color: transparent;
+    }
+    /* When the radio button is checked, add a blue background */
+    
+    .customradio input:checked~.checkmark {
+        background-color: white;
+        border: 1px solid #BEBEBE;
+    }
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Show the indicator (dot/circle) when checked */
+    
+    .customradio input:checked~.checkmark:after {
+        display: block;
+    }
+    /* Style the indicator (dot/circle) */
+    
+    .customradio .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #d9534f;
+    }
+    /* Custom Radio Button End*/
+    /*radio button text*/
+    
+    label {
+        font-size: 10pt;
+    }
+    /*Count part*/
+    
+    #qty_input {
+        margin-top: 12px;
+        text-align: center;
+        background-color: #ffffff;
+        font-weight: 700;
+        font-size: 15pt;
+        padding-left: 25px;
+    }
+    
+    #plus-btn {
+        margin-top: 12px;
+        border-bottom-right-radius: 20%;
+        border-top-right-radius: 20%;
+    }
+    
+    #minus-btn {
+        margin-top: 12px;
+        border-bottom-left-radius: 20%;
+        border-top-left-radius: 20%;
+    }
+    
+    #foodprice {
+        font-size: 28pt;
+        font-weight: 700;
+        color: #d9534f;
+        background-color: #ffffff;
+        border: 0;
+        text-align: right;
+        width: 100%;
+    }
+    /*check box custom */
+    
+    .checkbox label {
+        display: inline-block;
+        position: relative;
+        padding-left: 5px;
+    }
+    
+    .checkbox label::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        left: 0;
+        margin-left: -20px;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        background-color: #fff;
+        -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+    
+    .checkbox label::after {
+        display: inline-block;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 0;
+        margin-left: -20px;
+        padding-left: 3px;
+        padding-top: 1px;
+        font-size: 11px;
+        color: #555555;
+    }
+    
+    .checkbox input[type="checkbox"] {
+        opacity: 0;
+    }
+    
+    .checkbox input[type="checkbox"]:focus+label::before {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+    
+    .checkbox input[type="checkbox"]:disabled+label {
+        opacity: 0.65;
+    }
+    
+    .checkbox input[type="checkbox"]:disabled+label::before {
+        background-color: #eeeeee;
+        cursor: not-allowed;
+    }
+    
+    .checkbox.checkbox-circle label::before {
+        border-radius: 50%;
+    }
+    
+    .checkbox.checkbox-inline {
+        margin-top: 0;
+    }
+    
+    .checkbox-danger input[type="checkbox"]:checked+label::before {
+        background-color: #d9534f;
+        border-color: #d9534f;
+    }
+    
+    .checkbox-danger input[type="checkbox"]:checked+label::after {
+        color: #fff;
+    }
+</style>
+
+<body>
+    <!--Navigation Menu in fixed Top side-->
+    <nav id="top-navigation-bar" class="tabbable-panel">
+        <div class="tabbable-line">
+            <ul class="nav nav-tabs" role="tablist">
+                <li>
+                    <span style="padding:10px; font-size:35pt; color:#d9534f;" class="fas fa-arrow-left"></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4" style="padding-top:50px;">
+                <!--Food image-->
+                <img src="img/AZ버거 오리지널.jpg" id="order-image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4" style="padding:15px;">
+                <!--Food Name, explanation-->
+                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">AZ버거 오리지널</h5>
+                <p style="font-size: 10pt;">소프트한 수제 느낌의 감자번스에 숯불향이 더해진 순쇠고기 패티와 부드러운 특제 소스로 맛을 더한 버거</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4" style="border-top: solid 1px #eee; padding-top:20px; padding-bottom:20px;">
+                <label class="labeltext"><b>구성</b></label><br>
+                <div class="form-check-inline">
+                    <label class="customradio"><span class="radiotextsty">단품 <b>6,500원</b></span>
+                        <input type="radio" id="price1" checked="checked" value="0" name="radio">
+                        <span class="checkmark"></span>
+                      </label>
+                    <label class="customradio"><span class="radiotextsty">세트 <b>8,200원</b></span>
+                        <input type="radio" id="price2" value="1" name="radio">
+                        <span class="checkmark"></span>
+                      </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-12 col-md-8 col-xl-4" style="border-top: solid 1px #eee; padding-top:20px; padding-left:0; padding-right:0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="minus-btn"><i class="fa fa-minus"></i></button>
+                                </div>
+                                <input type="number" id="qty_input" class="form-control form-control-sm" value="1" min="1">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="plus-btn"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-8" style="text-align: right;">
+                            <input id="foodprice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top:20px;">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4" style="border-bottom: solid 1px #eee; padding-bottom:30px; padding-left:10; padding-right:10;">
+                <button class="btn btn-danger btn-lg" style="width:100%;">상품담기</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-6 col-md-4 col-xl-2" style="font-weight:600; font-size: 12pt; text-align:center; line-height: 25pt; border-bottom: solid 1px #eee; padding-right:0; padding-left:0; padding-top:20px; padding-bottom:20px;">
+                총칼로리<br>단백질<br>나트륨<br>당류<br>포화지방
+            </div>
+            <div class="col-6 col-md-4 col-xl-2" style="font-weight:400; font-size: 12pt; text-align:center; line-height: 25pt; border-bottom: solid 1px #eee; padding-right:0; padding-left:0; padding-top:20px; padding-bottom:20px;">
+                547kcal / 244g<br>27g<br>735mg<br>9g<br>17.0g
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4">
+                <button class="btn btn-default btn-lg" style="width:100%;">뒤로가기</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+
+
+<!------ JS CODE ---------->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //수량 변경시 표시 및 가격 변경
+        $('#qty_input').prop('disabled', true);
+        $('#plus-btn').click(function() {
+            $('#qty_input').val(parseInt($('#qty_input').val()) + 1);
+            if ($("input[name='radio']:checked").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio']:checked").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+        });
+        $('#minus-btn').click(function() {
+            $('#qty_input').val(parseInt($('#qty_input').val()) - 1);
+
+            if ($('#qty_input').val() == 0) {
+                $('#qty_input').val(1);
+            }
+            if ($("input[name='radio']:checked").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio']:checked").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+
+        });
+
+        //콤마 찍기 (현금 변환)
+        function Format_comma(val1) {
+            var newValue = val1 + ""; //숫자를 문자열로 변환
+            var len = newValue.length;
+            var ch = "";
+            var j = 1;
+            var formatValue = "";
+
+            // 콤마제거  
+            newValue = newValue.replace(/\,/gi, ' ');
+
+            // comma제거된 문자열 길이
+            len = newValue.length;
+
+            for (i = len; i > 0; i--) {
+                ch = newValue.substring(i - 1, i);
+                formatValue = ch + formatValue;
+                if ((j % 3) == 0 && i > 1) {
+                    formatValue = "," + formatValue;
+                }
+                j++
+            }
+            return formatValue;
+        }
+
+        //콤마 제거 (현금->숫자)
+        function Format_NoComma(val1) {
+            return (val1 + "").replace(/\,/gi, '');
+        }
+
+        //라디오 버튼 눌렀을 시 가격 변경
+        $("input[name='radio']:radio").change(function() {
+            if ($("input[name='radio']:checked").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio']:checked").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+        });
+
+        $('#foodprice').ready(function() {
+            $('#foodprice').val('6,500원');
+        });
+    });
+</script>
+
+</html>
