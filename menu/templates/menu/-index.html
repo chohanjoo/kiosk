@@ -152,26 +152,20 @@
             <ul class="nav nav-tabs justify-content-center" role="tablist">
                 <li class="active">
                     <a class="nav-link" href="#menu1">
-                        착한점심</a>
-                </li>
-                <li> <a class="nav-link" href="#menu2">
-                        추천메뉴</a>
-                </li>
-                <li> <a class="nav-link" href="#menu3">
                         햄버거</a>
                 </li>
-                <li> <a class="nav-link" href="#menu4">
+                <li> <a class="nav-link" href="#menu2">
                         치킨</a>
                 </li>
-                <li> <a class="nav-link" href="#menu5">
+                <li> <a class="nav-link" href="#menu3">
                         디저트</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#menu6">
+                    <a class="nav-link" href="#menu4">
                         음료</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#menu7">
+                    <a class="nav-link" href="#menu5">
                         패키지</a>
                 </li>
             </ul>
@@ -190,8 +184,8 @@
             <div class="col-lg-3 col-0"></div>
             <div class="col-lg-6 col-12">
                 <div class="jumbotron">
-                    <h4 class="text-center" style="text-shadow: black 0em 0em 0.2em; font-weight: 600;">아주 맛있는 녀석을 소개합니다</h4>
-                    <h5 class="text-center" style="text-shadow: black  0em 0em 0.2em;; font-weight: 500;">그것도 아주 신선한 치킨을 말이죠!</h5>
+                    <h5 class="text-center" style="text-shadow: black 0em 0em 0.2em; font-weight: 600;">아주 맛있는 녀석을 소개합니다</h5>
+                    <h6 class="text-center" style="text-shadow: black  0em 0em 0.2em;; font-weight: 500;">그것도 아주 신선한 치킨을 말이죠!</h6>
                     <p class="text-center"><a class="btn btn-danger btn-lg" role="button">주문하기</a></p>
                 </div>
             </div>
@@ -201,18 +195,18 @@
         <!--Menu1-->
         <div class="row">
             <div class="col-12">
-                <h3 id="menu1" class="text-center" style="padding-top:20px;"><b>착한점심</b></h3>
+                <h3 id="menu1" class="text-center" style="padding-top:20px;"><b>햄버거</b></h3>
             </div>
         </div>
         <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    {% for item in list %}
+                    {% for item in burger_list %}
                         <div>
-                            <img src="{{ item.image.url }}">
-                            <h4 class="text-center menu-title">{{ item.name }}</h4>
-                            <h5 class="text-center menu-price">{{ item.amount }}원</h4>
+                            <img src="{{ MEDIA_URL }}{{ item.image }}">
+                            <h5 class="text-center menu-title">{{ item.name }}</h5>
+                            <h6 class="text-center menu-price">{{ item.amount }}원</h6>
                         </div>
                     {% endfor %}
                 </section>
@@ -221,16 +215,16 @@
         <!--Menu2-->
         <div class="row">
             <div class="col-12">
-                <h3 id="menu2" class="text-center" style="padding-top:20px;"><b>추천메뉴</b></h3>
+                <h3 id="menu2" class="text-center" style="padding-top:20px;"><b>치킨</b></h3>
             </div>
         </div>
         <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    {% for item in recommendlist %}
+                    {% for item in chicken_list %}
                         <div>
-                            <img src="{{ item.image.url }}">
+                            <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>
                         </div>
@@ -241,81 +235,40 @@
         <!--Menu3-->
         <div class="row">
             <div class="col-12">
-                <h3 id="menu3" class="text-center" style="padding-top:20px;"><b>햄버거</b></h3>
+                <h3 id="menu3" class="text-center" style="padding-top:20px;"><b>디저트</b></h3>
             </div>
         </div>
         <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    <div>
-                        <img src="img/burger (1).jpg">
-                        <h5 class="text-center menu-title">와규버거</h5>
-                        <h6 class="text-center menu-price">7,800원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (2).jpg">
-                        <h5 class="text-center menu-title">모짜렐라인더버거-베이컨</h5>
-                        <h6 class="text-center menu-price">5,900원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (3).jpg">
-                        <h5 class="text-center menu-title">AZ버거</h5>
-                        <h6 class="text-center menu-price">6,500원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (4).jpg">
-                        <h5 class="text-center menu-title">모짜렐라인더버거-더블</h5>
-                        <h6 class="text-center menu-price">5,600원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (5).jpg">
-                        <h5 class="text-center menu-title">모짜렐라인더버거-해쉬</h5>
-                        <h6 class="text-center menu-price">4,800원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (6).jpg">
-                        <h5 class="text-center menu-title">원조빅불고기버거</h5>
-                        <h6 class="text-center menu-price">5,600원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (7).jpg">
-                        <h5 class="text-center menu-title">핫크리스피버거</h5>
-                        <h6 class="text-center menu-price">4,800원</h6>
-                    </div>
-                    <div>
-                        <img src="img/burger (8).jpg">
-                        <h5 class="text-center menu-title">한우불고기버거</h5>
-                        <h6 class="text-center menu-price">6,900원</h6>
-                    </div>
+                    {% for item in dessert_list %}
+                        <div>
+                            <img src="{{ MEDIA_URL }}{{ item.image }}">
+                            <h5 class="text-center menu-title">{{ item.name }}</h5>
+                            <h6 class="text-center menu-price">{{ item.amount }}원</h6>
+                        </div>
+                    {% endfor %}
                 </section>
             </div>
         </div>
         <!--Menu4-->
         <div class="row">
             <div class="col-12">
-                <h3 id="menu4" class="text-center" style="padding-top:20px;"><b>치킨</b></h3>
+                <h3 id="menu4" class="text-center" style="padding-top:20px;"><b>음료</b></h3>
             </div>
         </div>
         <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    <div>
-                        <img src="img/치킨1조각.jpg">
-                        <h5 class="text-center menu-title">치킨 1조각</h5>
-                        <h6 class="text-center menu-price">1,400원</h6>
-                    </div>
-                    <div>
-                        <img src="img/화이어윙(4조각).jpg">
-                        <h5 class="text-center menu-title">파이어윙(4조각)</h5>
-                        <h6 class="text-center menu-price">5,900원</h6>
-                    </div>
-                    <div>
-                        <img src="img/치킨휠레(4조각).jpg">
-                        <h5 class="text-center menu-title">치킨휠레(4조각)</h5>
-                        <h6 class="text-center menu-price">6,500원</h6>
-                    </div>
+                    {% for item in drink_list %}
+                        <div>
+                            <img src="{{ MEDIA_URL }}{{ item.image }}">
+                            <h5 class="text-center menu-title">{{ item.name }}</h5>
+                            <h6 class="text-center menu-price">{{ item.amount }}원</h6>
+                        </div>
+                    {% endfor %}
                 </section>
             </div>
         </div>
@@ -323,106 +276,20 @@
         <!--Menu5-->
         <div class="row">
             <div class="col-12">
-                <h3 id="menu5" class="text-center" style="padding-top:20px;"><b>디저트</b></h3>
+                <h3 id="menu5" class="text-center" style="padding-top:20px;"><b>패키지</b></h3>
             </div>
         </div>
         <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    <div>
-                        <img src="img/롱치즈스틱.jpg">
-                        <h5 class="text-center menu-title">롱치즈스틱</h5>
-                        <h6 class="text-center menu-price">1,500원</h6>
-                    </div>
-                    <div>
-                        <img src="img/선데이아이스크림(스트로베리).jpg">
-                        <h5 class="text-center menu-title">선데이아이스크림(스트로베리)</h5>
-                        <h6 class="text-center menu-price">1,800원</h6>
-                    </div>
-                    <div>
-                        <img src="img/소프트콘.jpg">
-                        <h5 class="text-center menu-title">소프트콘</h5>
-                        <h6 class="text-center menu-price">500원</h6>
-                    </div>
-                    <div>
-                        <img src="img/양념감자.jpg">
-                        <h5 class="text-center menu-title">양념감자</h5>
-                        <h6 class="text-center menu-price">2,000원</h6>
-                    </div>
-                    <div>
-                        <img src="img/치킨너겟.jpg">
-                        <h5 class="text-center menu-title">치킨너겟</h5>
-                        <h6 class="text-center menu-price">2,000원</h6>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!--Menu6-->
-        <div class="row">
-            <div class="col-12">
-                <h3 id="menu6" class="text-center" style="padding-top:20px;"><b>음료</b></h3>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
-            <div class="col-md-2 col-0"></div>
-            <div class="col-md-8 col-12">
-                <section class="center slider">
-                    <div>
-                        <img src="img/사이다.jpg">
-                        <h5 class="text-center menu-title">사이다</h5>
-                        <h6 class="text-center menu-price">1,000원</h6>
-                    </div>
-                    <div>
-                        <img src="img/콜라.jpg">
-                        <h5 class="text-center menu-title">콜라</h5>
-                        <h6 class="text-center menu-price">1,000원</h6>
-                    </div>
-                    <div>
-                        <img src="img/오렌지주스.jpg">
-                        <h5 class="text-center menu-title">오렌지주스</h5>
-                        <h6 class="text-center menu-price">1,500원</h6>
-                    </div>
-                    <div>
-                        <img src="img/아이스 아메리카노.jpg">
-                        <h5 class="text-center menu-title">아이스아메리카노</h5>
-                        <h6 class="text-center menu-price">1,500원</h6>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!--Menu7-->
-        <div class="row">
-            <div class="col-12">
-                <h3 id="menu7" class="text-center" style="padding-top:20px;"><b>패키지</b></h3>
-            </div>
-        </div>
-        <div class="row" style="border-bottom: 1px solid #eee; padding-bottom:30px;">
-            <div class="col-md-2 col-0"></div>
-            <div class="col-md-8 col-12">
-                <section class="center slider">
-                    <div>
-                        <img src="img/모짜렐라인더버거베이컨세트.jpg">
-                        <h5 class="text-center menu-title">모짜렐라인더버거베이컨세트</h5>
-                        <h6 class="text-center menu-price">8,800원</h6>
-                    </div>
-                    <div>
-                        <img src="img/한우불고기콤보.jpg">
-                        <h5 class="text-center menu-title">한우불고기콤보</h5>
-                        <h6 class="text-center menu-price">8,900원</h6>
-                    </div>
-                    <div>
-                        <img src="img/치킨버거 세트.jpg">
-                        <h5 class="text-center menu-title">치킨버거세트</h5>
-                        <h6 class="text-center menu-price">6,500원</h6>
-                    </div>
-                    <div>
-                        <img src="img/와규세트.jpg">
-                        <h5 class="text-center menu-title">와규버거세트</h5>
-                        <h6 class="text-center menu-price">8,600원</h6>
-                    </div>
+                    {% for item in package_list %}
+                        <div>
+                            <img src="{{ MEDIA_URL }}{{ item.image }}">
+                            <h5 class="text-center menu-title">{{ item.name }}</h5>
+                            <h6 class="text-center menu-price">{{ item.amount }}원</h6>
+                        </div>
+                    {% endfor %}
                 </section>
             </div>
         </div>
@@ -434,9 +301,6 @@
             </div>
         </div>
     </div>
-    </div>
-
-
 
 </body>
 
