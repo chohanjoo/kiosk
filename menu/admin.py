@@ -4,4 +4,4 @@ from .models import Menu
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name' , 'amount', 'image']

@@ -240,6 +240,7 @@
         </div>
 
         <!--Carousel-->
+       
         <!--Menu1-->
         <div class="row">
             <div class="col-12">
@@ -250,46 +251,15 @@
             <div class="col-md-2 col-0"></div>
             <div class="col-md-8 col-12">
                 <section class="center slider">
-                    <div>
-                        <img src="{% static "menu/img/burger (1).jpg" %}">
-                        <h4 class="text-center menu-title">와규버거</h4>
-                        <h5 class="text-center menu-price">7,800원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (2).jpg" %}">
-                        <h4 class="text-center menu-title">모짜렐라인더버거-베이컨</h4>
-                        <h5 class="text-center menu-price">5,900원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (3).jpg" %}">
-                        <h4 class="text-center menu-title">AZ버거</h4>
-                        <h5 class="text-center menu-price">6,500원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (4).jpg" %}">
-                        <h4 class="text-center menu-title">모짜렐라인더버거-더블</h4>
-                        <h5 class="text-center menu-price">5,600원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (5).jpg" %}">
-                        <h4 class="text-center menu-title">모짜렐라인더버거-해쉬</h4>
-                        <h5 class="text-center menu-price">4,800원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (6).jpg" %}">
-                        <h4 class="text-center menu-title">원조빅불고기버거</h4>
-                        <h5 class="text-center menu-price">5,600원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (7).jpg" %}">
-                        <h4 class="text-center menu-title">핫크리스피버거</h4>
-                        <h5 class="text-center menu-price">4,800원</h4>
-                    </div>
-                    <div>
-                        <img src="{% static "menu/img/burger (8).jpg" %}">
-                        <h4 class="text-center menu-title">한우불고기버거</h4>
-                        <h5 class="text-center menu-price">6,900원</h4>
-                    </div>
+                        
+                    {% for item in list %}
+                        <div>
+                            <img src="{{ item.image.url }}">
+                            <h4 class="text-center menu-title">{{ item.name }}</h4>
+                            <h5 class="text-center menu-price">{{ item.amount }}원</h4>
+                        </div>
+                    {% endfor %}
+                    
                 </section>
             </div>
         </div>
@@ -302,7 +272,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     <div>
-                        <img src="{% static "menu/img/burger (1).jpg" %}">
+                        <img src="{% static "menu/img/sample.jpg" %}">
                         <h4 class="text-center menu-title">와규버거</h4>
                         <h5 class="text-center menu-price">7,800원</h4>
                     </div>
@@ -423,3 +393,6 @@
 
 
 </html>
+
+
+
