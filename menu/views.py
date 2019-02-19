@@ -5,4 +5,4 @@ from .models import Menu
 
 def list(request):
     list = Menu.objects.all()
-    return render(request, 'menu/index.html',{'list' : list})
+    return render(request, 'menu/-index.html',{'list' : list})
