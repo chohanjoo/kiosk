@@ -7,6 +7,7 @@ app_name = 'menu'
 
 urlpatterns = [
     path('', views.list, name='list'),
+    path('<int:pk>/', views.menu_detail),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
