@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>롯데리아 숭실대점</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+    <!--Slick-->
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+
+</head>
+
+<style type="text/css">
+    /* Concept color : #d9534f and #eee */
+    /* Top side tab pannel CSS style*/
+    
+    .tabbable-line {
+        padding: 0px;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        border: 0;
+        z-index: 100;
+        background-color: #ffffff;
+    }
+    /* Default mode */
+    
+    .nav-tabs .nav-link.active {
+        background-color: transparent;
+        border-color: transparent;
+        border-bottom: 4px solid #d9534f !important;
+        font-weight: 600;
+    }
+    
+    .nav-tabs .nav-link {
+        border: none;
+        height: 50px;
+        background-color: #ffffff;
+    }
+    
+    .tabbable-line>.nav-tabs>li>a {
+        border: 0;
+        margin-right: 0;
+        color: #737373;
+    }
+    
+    .tabbable-line>.nav-tabs>li.open>a,
+    .tabbable-line>.nav-tabs>li:hover>a {
+        border: 0;
+        background: none !important;
+        color: #333333;
+    }
+    /*orderpart*/
+    
+    #order-image {
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 15px;
+    }
+    /*Count part*/
+    
+    #qty_input {
+        margin-top: 5px;
+        text-align: center;
+        background-color: #ffffff;
+        font-weight: 700;
+        font-size: 15pt;
+        padding-left: 25px;
+    }
+    
+    #plus-btn {
+        margin-top: 5px;
+        border-bottom-right-radius: 20%;
+        border-top-right-radius: 20%;
+    }
+    
+    #minus-btn {
+        margin-top: 5px;
+        border-bottom-left-radius: 20%;
+        border-top-left-radius: 20%;
+    }
+    
+    #foodprice {
+        font-size: 20pt;
+        font-weight: 700;
+        color: #d9534f;
+        background-color: #ffffff;
+        border: 0;
+        text-align: right;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <!--Navigation Menu in fixed Top side-->
+    <nav id="top-navigation-bar" class="tabbable-panel">
+        <div class="tabbable-line">
+            <ul class="nav nav-tabs" role="tablist">
+                <li>
+                    <span style="padding:10px; font-size:35pt; color:#d9534f;" class="fas fa-arrow-left"></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" style="height:50px;"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-6 col-md-6 col-xl-3">
+                <!--Food Name, explanation-->
+                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">AZ버거 오리지널</h5>
+                <p style="font-size: 10pt;">메뉴 : 단품(6,500원)</p>
+            </div>
+            <div class="col-6 col-md-2 col-xl-1" style="padding-top:30px; text-align: right;">
+                <button class="btn btn-md">삭제</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-12 col-md-8 col-xl-4" style="border-bottom: solid 1px #eee; padding-bottom:20px; padding-left:0; padding-right:0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="minus-btn"><i class="fa fa-minus"></i></button>
+                                </div>
+                                <input type="number" id="qty_input" class="form-control form-control-sm" value="1" min="1">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="plus-btn"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-8" style="text-align: right;">
+                            <input id="foodprice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-6 col-md-6 col-xl-3">
+                <!--Food Name, explanation-->
+                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">AZ버거 오리지널</h5>
+                <p style="font-size: 10pt;">메뉴 : 단품(6,500원)</p>
+            </div>
+            <div class="col-6 col-md-2 col-xl-1" style="padding-top:30px; text-align: right;">
+                <button class="btn btn-md">삭제</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-12 col-md-8 col-xl-4" style="border-bottom: solid 1px #eee; padding-bottom:20px; padding-left:0; padding-right:0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="minus-btn"><i class="fa fa-minus"></i></button>
+                                </div>
+                                <input type="number" id="qty_input" class="form-control form-control-sm" value="1" min="1">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="plus-btn"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-8" style="text-align: right;">
+                            <input id="foodprice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-6 col-md-6 col-xl-3">
+                <!--Food Name, explanation-->
+                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">AZ버거 오리지널</h5>
+                <p style="font-size: 10pt;">메뉴 : 단품(6,500원)</p>
+            </div>
+            <div class="col-6 col-md-2 col-xl-1" style="padding-top:30px; text-align: right;">
+                <button class="btn btn-md">삭제</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-12 col-md-8 col-xl-4" style="border-bottom: solid 1px #eee; padding-bottom:20px; padding-left:0; padding-right:0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="minus-btn"><i class="fa fa-minus"></i></button>
+                                </div>
+                                <input type="number" id="qty_input" class="form-control form-control-sm" value="1" min="1">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-dark btn-sm" id="plus-btn"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-8" style="text-align: right;">
+                            <input id="foodprice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-0 col-md-2 col-xl-4"></div>
+            <div class="col-sm-12 col-md-8 col-xl-4" style="border-bottom: solid 1px #eee;">
+                <button class="btn btn-default btn-lg" style="width:100%;">+ 메뉴 더 담으러 가기</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-0 col-md-2 col-xl-4"></div>
+            <div class="col-6 col-md-4 col-xl-2" style="border-bottom: solid 1px #eee; padding-top:30px; padding-bottom:30px;">
+                <h5>총 주문금액</h5>
+            </div>
+            <div class="col-6 col-md-4 col-xl-2" style="border-bottom: solid 1px #eee; padding-top:30px; padding-bottom:30px;">
+                <input id="foodprice">
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row " style="padding-top:10px; padding-bottom:10px;">
+            <div class="col-sm-0 col-md-2 col-xl-4 "></div>
+            <div class="col-sm-12 col-md-8 col-xl-4 " style="padding-left:10; padding-right:10; ">
+                <button class="btn btn-danger btn-lg " style="width:100%; ">결제하기</button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+
+
+
+<!------ JS CODE ---------->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js " type="text/javascript "></script>
+<script src="./slick/slick.js " type="text/javascript " charset="utf-8 "></script>
+<script type="text/javascript ">
+    $(document).ready(function() {
+
+        //수량 변경시 표시 및 가격 변경
+        $('#qty_input').prop('disabled', true);
+        $('#plus-btn').click(function() {
+            $('#qty_input').val(parseInt($('#qty_input').val()) + 1);
+            if ($("input[name='radio' ]:checked ").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio' ]:checked ").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+        });
+        $('#minus-btn').click(function() {
+            $('#qty_input').val(parseInt($('#qty_input').val()) - 1);
+
+            if ($('#qty_input').val() == 0) {
+                $('#qty_input').val(1);
+            }
+            if ($("input[name='radio' ]:checked ").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio' ]:checked ").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+
+        });
+
+        //콤마 찍기 (현금 변환)
+        function Format_comma(val1) {
+            var newValue = val1 + " "; //숫자를 문자열로 변환
+            var len = newValue.length;
+            var ch = " ";
+            var j = 1;
+            var formatValue = " ";
+
+            // 콤마제거  
+            newValue = newValue.replace(/\,/gi, ' ');
+
+            // comma제거된 문자열 길이
+            len = newValue.length;
+
+            for (i = len; i > 0; i--) {
+                ch = newValue.substring(i - 1, i);
+                formatValue = ch + formatValue;
+                if ((j % 3) == 0 && i > 1) {
+                    formatValue = ", " + formatValue;
+                }
+                j++
+            }
+            return formatValue;
+        }
+
+        //콤마 제거 (현금->숫자)
+        function Format_NoComma(val1) {
+            return (val1 + " ").replace(/\,/gi, '');
+        }
+
+        //라디오 버튼 눌렀을 시 가격 변경
+        $("input[name='radio' ]:radio ").change(function() {
+            if ($("input[name='radio' ]:checked ").val() == 0) {
+                var price = parseInt($('#qty_input').val()) * 6500;
+                $('#foodprice').val(Format_comma(price) + '원');
+            } else if ($("input[name='radio' ]:checked ").val() == 1) {
+                var price = parseInt($('#qty_input').val()) * 8200;
+                $('#foodprice').val(Format_comma(price) + '원');
+            }
+        });
+
+        $('#foodprice').ready(function() {
+            $('#foodprice').val('6,500원');
+        });
+    });
+</script>
+
+</html>
