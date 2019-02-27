@@ -203,7 +203,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     {% for item in burger_list %}
-                        <div>
+                        <div style=" cursor: pointer;" onclick = "location.href='{{ item.id }}/';" >
                             <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>
@@ -223,7 +223,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     {% for item in chicken_list %}
-                        <div>
+                        <div style=" cursor: pointer;" onclick = "location.href='{{ item.id }}/';">
                             <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>
@@ -243,7 +243,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     {% for item in dessert_list %}
-                        <div>
+                        <div style=" cursor: pointer;" onclick = "location.href='{{ item.id }}/';">
                             <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>
@@ -263,7 +263,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     {% for item in drink_list %}
-                        <div>
+                        <div style=" cursor: pointer;" onclick = "location.href='{{ item.id }}/';">
                             <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>
@@ -284,7 +284,7 @@
             <div class="col-md-8 col-12">
                 <section class="center slider">
                     {% for item in package_list %}
-                        <div>
+                        <div style=" cursor: pointer;" onclick = "location.href='{{ item.id }}/';">
                             <img src="{{ MEDIA_URL }}{{ item.image }}">
                             <h5 class="text-center menu-title">{{ item.name }}</h5>
                             <h6 class="text-center menu-price">{{ item.amount }}원</h6>

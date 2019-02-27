@@ -314,14 +314,14 @@
             <div class="col-sm-0 col-md-2 col-xl-4"></div>
             <div class="col-sm-12 col-md-8 col-xl-4" style="padding-top:50px;">
                 <!--Food image-->
-                <img src="img/AZ버거 오리지널.jpg" id="order-image">
+                <img src="{{ MEDIA_URL }}{{ item.image }}" id="order-image">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-0 col-md-2 col-xl-4"></div>
             <div class="col-sm-12 col-md-8 col-xl-4" style="padding:15px;">
                 <!--Food Name, explanation-->
-                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">AZ버거 오리지널</h5>
+                <h5 style="margin-top:20px; margin-bottom:10px; font-weight:600;">{{ item.name }}</h5>
                 <p style="font-size: 10pt;">소프트한 수제 느낌의 감자번스에 숯불향이 더해진 순쇠고기 패티와 부드러운 특제 소스로 맛을 더한 버거</p>
             </div>
         </div>
@@ -330,7 +330,7 @@
             <div class="col-sm-12 col-md-8 col-xl-4" style="border-top: solid 1px #eee; padding-top:20px; padding-bottom:20px;">
                 <label class="labeltext"><b>구성</b></label><br>
                 <div class="form-check-inline">
-                    <label class="customradio"><span class="radiotextsty">단품 <b>6,500원</b></span>
+                    <label class="customradio"><span class="radiotextsty">단품 <b>{{ item.amount }}원</b></span>
                         <input type="radio" id="price1" checked="checked" value="0" name="radio">
                         <span class="checkmark"></span>
                       </label>

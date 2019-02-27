@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from soda import settings
 from .models import Menu
 
@@ -16,5 +16,12 @@ def list(request):
         'dessert_list' : dessert_list,
         'drink_list' : drink_list,
         'package_list' : package_list,
+        'MEDIA_URL' : settings.MEDIA_URL,
+    })
+
+def menu_detail(request, pk):
+    item = get_object_or_404(Menu, pk=pk)
+    return render(request, 'menu/order.html', {
+        'item':item,
         'MEDIA_URL' : settings.MEDIA_URL,
     })
